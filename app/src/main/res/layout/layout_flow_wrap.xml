@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/chipOne"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="#2962FF" />
+
+    <View
+        android:id="@+id/chipTwo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#7CB342" />
+
+    <View
+        android:id="@+id/chipThree"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:background="#00ACC1" />
+
+
+    <View
+        android:id="@+id/chipFour"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#C0CA33" />
+
+
+    <View
+        android:id="@+id/chipFive"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:background="#FB8C00" />
+
+
+    <View
+        android:id="@+id/chipSix"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:background="#D81B60" />
+
+    <View
+        android:id="@+id/chipSeven"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="#F4511E" />
+
+
+    <View
+        android:id="@+id/chipEight"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#43A047" />
+
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:constraint_referenced_ids="chipOne,chipTwo,chipThree,chipFour,chipFive,chipSix,chipSeven,chipEight"
+        app:flow_horizontalGap="8dp"
+        app:flow_verticalGap="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/flow_options"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/text_wrap_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="Mode" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/button_group_wrap_modes"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:checkedButton="@+id/button_wrap_mode_none"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_wrap_mode_none"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="None" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_wrap_mode_chain"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chain" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_wrap_mode_align"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Align" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <TextView
+        android:id="@+id/text_chain_style"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="Style" />
+
+
+    <TextView
+
+        android:id="@+id/text_horizontal_bias"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="Bias" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar_bias"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:max="100" />
+
+
+    <TextView
+        android:id="@+id/text_vertical_alignment"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="Alignment" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/button_group_vertical_alignment"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:checkedButton="@+id/button_vertical_alignment_center"
+        app:singleSelection="true">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_vertical_alignment_top"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="56dp"
+            android:layout_height="48dp"
+            app:icon="@drawable/ic_vertical_align_top_black_24dp"
+            app:iconGravity="end"
+            app:iconPadding="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_vertical_alignment_center"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="56dp"
+            android:layout_height="48dp"
+            app:icon="@drawable/ic_vertical_align_center_black_24dp"
+            app:iconGravity="end"
+            app:iconPadding="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_vertical_alignment_bottom"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="56dp"
+            android:layout_height="48dp"
+            app:icon="@drawable/ic_vertical_align_bottom_black_24dp"
+            app:iconGravity="end"
+            app:iconPadding="0dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_vertical_alignment_baseline"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="56dp"
+            android:layout_height="48dp"
+            app:icon="@drawable/ic_text_format_black_24dp"
+            app:iconGravity="end"
+            app:iconPadding="0dp" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <TextView
+        android:id="@+id/text_flow_orientation"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="Orientation" />
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/button_group_chain_style"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:checkedButton="@+id/button_chain_style_spread"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_chain_style_packed"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Packed" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_chain_style_spread"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spread" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_chain_style_spread_inside"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inside" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/button_group_flow_style"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:checkedButton="@+id/button_flow_horizontal"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_flow_vertical"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_flow_horizontal"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horizontal" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:constraint_referenced_ids="text_flow_orientation,text_wrap_mode,text_chain_style,text_horizontal_bias,text_vertical_alignment,button_group_flow_style,button_group_wrap_modes,button_group_chain_style,seekbar_bias,button_group_vertical_alignment"
+        app:flow_horizontalAlign="start"
+        app:flow_horizontalGap="12dp"
+        app:flow_maxElementsWrap="5"
+        app:flow_verticalGap="12dp"
+        app:flow_verticalStyle="spread"
+        app:flow_wrapMode="chain"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
