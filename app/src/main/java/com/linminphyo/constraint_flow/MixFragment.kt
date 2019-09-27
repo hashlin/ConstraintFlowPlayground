@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.transition.TransitionManager
 import kotlinx.android.synthetic.main.layout_flow_wrap.*
 
