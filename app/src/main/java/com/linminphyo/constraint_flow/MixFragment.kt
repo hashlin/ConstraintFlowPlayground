@@ -19,11 +19,6 @@ import kotlinx.android.synthetic.main.layout_flow_wrap.*
 
 class MixFragment : Fragment() {
 
-
-    private val viewModel by lazy {
-        ViewModelProviders.of(this).get(FlowViewModel::class.java)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -43,7 +38,6 @@ class MixFragment : Fragment() {
                     R.id.button_wrap_mode_align -> Flow.WRAP_ALIGNED
                     else -> Flow.WRAP_NONE
                 }.let{
-                    viewModel.setWrapMode(it)
                 }
             }
         }
@@ -56,7 +50,6 @@ class MixFragment : Fragment() {
                     R.id.button_chain_style_spread_inside -> Flow.CHAIN_SPREAD_INSIDE
                     else -> Flow.CHAIN_PACKED
                 }.let {
-                    viewModel.setChainStyle(it)
                 }
 
             }
@@ -70,7 +63,6 @@ class MixFragment : Fragment() {
             }
 
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                viewModel.setBias((p1 / 100f))
             }
 
         })
@@ -88,7 +80,6 @@ class MixFragment : Fragment() {
                     R.id.button_horizontal_alignment_end -> Flow.HORIZONTAL_ALIGN_END
                     else -> return@addOnButtonCheckedListener
                 }.let {
-                    viewModel.setAlignment(it)
                 }
             }
         }
@@ -99,68 +90,10 @@ class MixFragment : Fragment() {
                     R.id.button_flow_vertical -> Flow.VERTICAL
                     else -> Flow.HORIZONTAL
                 }.let {
-                    viewModel.setOrientation(it)
                 }
             }
         }
-        viewModel.flowOrientation.observe( this , Observer {
-            TransitionManager.beginDelayedTransition(parent)
-            flow.setOrientation(it)
-            if(it == Flow.VERTICAL){
-                button_vertical_alignment_baseline.visibility = View.GONE
-                button_vertical_alignment_bottom.visibility = View.GONE
-                button_vertical_alignment_center.visibility = View.GONE
-                button_vertical_alignment_top.visibility = View.GONE
 
-                button_horizontal_alignment_start.visibility = View.VISIBLE
-                button_horizontal_alignment_end.visibility = View.VISIBLE
-                button_horizontal_alignment_center.visibility = View.VISIBLE
-            }else{
-                button_vertical_alignment_baseline.visibility = View.VISIBLE
-                button_vertical_alignment_bottom.visibility = View.VISIBLE
-                button_vertical_alignment_center.visibility = View.VISIBLE
-                button_vertical_alignment_top.visibility = View.VISIBLE
-
-                button_horizontal_alignment_start.visibility = View.GONE
-                button_horizontal_alignment_end.visibility = View.GONE
-                button_horizontal_alignment_center.visibility = View.GONE
-            }
-        })
-
-        viewModel.flowWrapMode.observe(this , Observer {
-            TransitionManager.beginDelayedTransition(parent)
-            flow.setWrapMode(it)
-        })
-
-        viewModel.flowChainStyle.observe(this , Observer {
-            TransitionManager.beginDelayedTransition(parent)
-            if (it.first == Flow.VERTICAL) {
-                flow.setVerticalStyle(it.second)
-            } else {
-                flow.setHorizontalStyle(it.second)
-            }
-        })
-
-        viewModel.flowAlignment.observe(this , Observer {
-            TransitionManager.beginDelayedTransition(parent)
-            // Alignment is in the opposite direction of flow orientation
-            if (it.first == Flow.VERTICAL) {
-                flow.setHorizontalAlign(it.second)
-            } else {
-                flow.setVerticalAlign(it.second)
-            }
-        })
-
-        viewModel.flowBias.observe(this, Observer {
-            TransitionManager.beginDelayedTransition(parent)
-            if (it.first == Flow.VERTICAL) {
-                flow.setVerticalBias(it.second)
-                flow.setHorizontalBias(0f)
-            } else {
-                flow.setVerticalBias(0f)
-                flow.setHorizontalBias(it.second)
-            }
-        })
     }
 
     companion object {

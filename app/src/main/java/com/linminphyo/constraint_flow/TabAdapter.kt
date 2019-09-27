@@ -13,7 +13,7 @@ class TabAdapter(fm: FragmentManager, behavior: Int) : FragmentStatePagerAdapter
         return when(position){
             0 -> SingleDirectionFragment.newInstance(Flow.HORIZONTAL)
             1 -> SingleDirectionFragment.newInstance(Flow.VERTICAL)
-            else -> SingleDirectionFragment()
+            else -> MixFragment()
         }
     }
 
