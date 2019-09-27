@@ -2,7 +2,8 @@ package com.linminphyo.constraint_flow
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
+import androidx.fragment.app.FragmentStatePagerAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,7 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().replace(R.id.frame , FragmentA.getInstance()).commit()
+        viewPager.adapter = TabAdapter(supportFragmentManager , FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
+        tab.setupWithViewPager(viewPager)
+
 
     }
 
