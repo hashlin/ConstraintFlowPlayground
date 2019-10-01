@@ -11,8 +11,8 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 class TabAdapter(fm: FragmentManager, behavior: Int) : FragmentStatePagerAdapter(fm, behavior) {
     override fun getItem(position: Int): Fragment {
         return when(position){
-            0 -> SingleDirectionFragment.newInstance(Flow.HORIZONTAL)
-            1 -> SingleDirectionFragment.newInstance(Flow.VERTICAL)
+            0 -> HorizontalFlowFragment()
+            1 -> VerticalFlowFragment()
             else -> MixFragment()
         }
     }

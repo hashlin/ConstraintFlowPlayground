@@ -125,8 +125,9 @@
         android:text="Bias" />
 
     <androidx.appcompat.widget.AppCompatSeekBar
-        android:id="@+id/seekbar_bias"
+        android:id="@+id/seekbar_horizontal_bias"
         android:layout_width="180dp"
+        android:progress="50"
         android:layout_height="48dp"
         android:max="100" />
 
@@ -139,58 +140,20 @@
         android:text="Alignment" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/button_group_alignments"
+        android:id="@+id/button_group_horizontal_alignments"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         app:singleSelection="true">
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_vertical_alignment_top"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="56dp"
-            android:layout_height="48dp"
-            app:icon="@drawable/ic_vertical_align_top_black_24dp"
-            app:iconGravity="end"
-            app:iconPadding="0dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_vertical_alignment_center"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="56dp"
-            android:layout_height="48dp"
-            app:icon="@drawable/ic_vertical_align_center_black_24dp"
-            app:iconGravity="end"
-            app:iconPadding="0dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_vertical_alignment_bottom"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="56dp"
-            android:layout_height="48dp"
-            app:icon="@drawable/ic_vertical_align_bottom_black_24dp"
-            app:iconGravity="end"
-            app:iconPadding="0dp" />
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_vertical_alignment_baseline"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="56dp"
-            android:layout_height="48dp"
-            app:icon="@drawable/ic_text_format_black_24dp"
-            app:iconGravity="end"
-            app:iconPadding="0dp" />
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_horizontal_alignment_start"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:layout_width="56dp"
             android:layout_height="48dp"
-            app:icon="@drawable/ic_end"
-            android:rotation="180"
+            app:icon="@drawable/ic_start"
             app:iconGravity="end"
             app:iconPadding="0dp" />
-
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_horizontal_alignment_center"
@@ -203,7 +166,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_horizontal_alignment_end"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="56dp"
             android:layout_height="48dp"
             app:icon="@drawable/ic_end"
@@ -212,14 +175,6 @@
 
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
-
-    <TextView
-        android:id="@+id/text_flow_orientation"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:gravity="center_vertical"
-        android:text="Orientation" />
-
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/button_group_chain_style"
@@ -250,28 +205,6 @@
             android:text="Inside" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/button_group_flow_style"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        app:checkedButton="@+id/button_flow_horizontal"
-        app:singleSelection="true">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_flow_vertical"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vertical" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_flow_horizontal"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Horizontal" />
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flow_options"
@@ -279,10 +212,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp"
-        app:constraint_referenced_ids="text_flow_orientation,text_wrap_mode,text_chain_style,text_horizontal_bias,text_vertical_alignment,button_group_flow_style,button_group_wrap_modes,button_group_chain_style,seekbar_bias,button_group_alignments"
+        app:constraint_referenced_ids="text_wrap_mode,text_chain_style,text_horizontal_bias,text_vertical_alignment,button_group_wrap_modes,button_group_chain_style,seekbar_horizontal_bias,button_group_horizontal_alignments"
         app:flow_horizontalAlign="start"
+        app:flow_verticalAlign="center"
         app:flow_horizontalGap="12dp"
-        app:flow_maxElementsWrap="5"
+        app:flow_maxElementsWrap="4"
         app:flow_verticalGap="12dp"
         app:flow_verticalStyle="spread"
         app:flow_wrapMode="chain"

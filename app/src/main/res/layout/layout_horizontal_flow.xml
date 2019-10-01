@@ -125,7 +125,7 @@
         android:text="Bias" />
 
     <androidx.appcompat.widget.AppCompatSeekBar
-        android:id="@+id/seekbar_bias"
+        android:id="@+id/seekbar_horizontal_bias"
         android:layout_width="180dp"
         android:progress="50"
         android:layout_height="48dp"
@@ -140,7 +140,7 @@
         android:text="Alignment" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/button_group_alignments"
+        android:id="@+id/button_group_horizontal_alignments"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         app:singleSelection="true">
@@ -221,7 +221,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp"
-        app:constraint_referenced_ids="text_wrap_mode,text_chain_style,text_horizontal_bias,text_vertical_alignment,button_group_wrap_modes,button_group_chain_style,seekbar_bias,button_group_alignments"
+        app:constraint_referenced_ids="text_wrap_mode,text_chain_style,text_horizontal_bias,text_vertical_alignment,button_group_wrap_modes,button_group_chain_style,seekbar_horizontal_bias,button_group_horizontal_alignments"
         app:flow_horizontalAlign="start"
         app:flow_verticalAlign="center"
         app:flow_horizontalGap="12dp"
