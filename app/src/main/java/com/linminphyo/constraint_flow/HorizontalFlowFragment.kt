@@ -70,7 +70,7 @@ class HorizontalFlowFragment : Fragment() {
 
         })
 
-        button_group_horizontal_alignments.addOnButtonCheckedListener { group, checkedId, isChecked ->
+        button_group_vertical_alignments.addOnButtonCheckedListener { group, checkedId, isChecked ->
             if (isChecked) {
                 TransitionManager.beginDelayedTransition(parent)
                 when (checkedId) {
@@ -79,7 +79,7 @@ class HorizontalFlowFragment : Fragment() {
                     R.id.button_vertical_alignment_baseline -> Flow.VERTICAL_ALIGN_BASELINE
                     else -> Flow.VERTICAL_ALIGN_CENTER
                 }.let {
-                    flow.setHorizontalAlign(it)
+                    flow.setVerticalAlign(it)
                 }
             }
         }

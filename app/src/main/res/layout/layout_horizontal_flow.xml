@@ -140,7 +140,7 @@
         android:text="Alignment" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/button_group_horizontal_alignments"
+        android:id="@+id/button_group_vertical_alignments"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         app:singleSelection="true">

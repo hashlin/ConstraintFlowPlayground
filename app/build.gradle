@@ -11,8 +11,8 @@ android {
         applicationId "com.linminphyo.constraint_flow"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 4
-        versionName "1.0.3"
+        versionCode 8
+        versionName "1.0.7"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
