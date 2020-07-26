@@ -84,3 +84,5 @@ lint/tmp/
 
 
 *.DS_Store
+
+.idea/
